@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="header">
+    <div>
+      <div class="title">LockInCompanion</div>
+      <div class="subtitle">Focus session + site guard</div>
+    </div>
+    <div class="badge" id="healthBadge">🌱 100%</div>
+  </div>
+
+  <div class="card">
+
+    <div class="row">
+      <label class="label" for="minutes">Minutes</label>
+      <input id="minutes" type="number" min="1" value="25" />
+    </div>
+
+    <div class="status" id="status">Not in a focus session.</div>
+
+    <div class="bar">
+      <div class="fill" id="timeFill"></div>
+    </div>
+
+
+    <div class="btnRow">
+      <button class="btn primary" id="start">Start</button>
+      <button class="btn" id="stop">Stop</button>
+    </div>
+
+    <div class="btnRow">
+      <button class="btn ghost full" id="openDash">Dashboard</button>
+    </div>
+
+    <div class="tiny" id="stats"></div>
+  </div>
+
+  <div class="card">
+    <div class="sectionTitle">Allowlist</div>
+    <div class="row">
+      <input id="allowInput" placeholder="e.g. docs.google.com" />
+      <button class="btn" id="addAllow">Add</button>
+    </div>
+    <div class="row">
+      <button class="btn ghost" id="addCurrent">Add Current Site</button>
+      <button class="btn ghost" id="clearAllow">Clear</button>
+    </div>
+    <ul id="allowList"></ul>
+  </div>
+
+  <div class="card">
+    <div class="sectionTitle">Blocklist</div>
+    <div class="row">
+      <input id="blockInput" placeholder="e.g. youtube.com" />
+      <button class="btn" id="addBlock">Add</button>
+    </div>
+    <div class="row">
+      <button class="btn ghost" id="clearBlock">Clear</button>
+    </div>
+    <ul id="blockList"></ul>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

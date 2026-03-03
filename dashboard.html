@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>LockIn Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="h1">Dashboard</div>
+        <div class="sub">Your study analytics built from event logs.</div>
+      </div>
+      <div class="pill" id="nowPill"></div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="k">Focus today</div>
+        <div class="v" id="focusToday">—</div>
+        <div class="s" id="focusTodaySub">—</div>
+      </div>
+
+      <div class="card">
+        <div class="k">Last 7 days focus</div>
+        <div class="v" id="focusWeek">—</div>
+        <div class="s" id="sessionsWeekSub">—</div>
+      </div>
+
+      <div class="card">
+        <div class="k">Completion rate (7d)</div>
+        <div class="v" id="completionRate">—</div>
+        <div class="s" id="completionSub">—</div>
+      </div>
+
+      <div class="card">
+        <div class="k">Blocked attempts (7d)</div>
+        <div class="v" id="blockedWeek">—</div>
+        <div class="s" id="blockedTodaySub">—</div>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="card">
+        <div class="k">Most distracted hour (7d)</div>
+        <div class="v" id="mostHour">—</div>
+        <div class="s" id="leastHour">—</div>
+      </div>
+
+      <div class="card">
+        <div class="k">Top distracting domains (7d)</div>
+        <ol class="list" id="topDomains"></ol>
+        <div class="s">Counts are blocked attempts during active focus sessions.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="k">Hourly distraction histogram (7d)</div>
+      <div class="hist" id="hist"></div>
+      <div class="s">Each bar = blocked attempts during that hour of day.</div>
+    </div>
+
+    <div class="footer">
+      <button id="clearAnalytics">Clear analytics data</button>
+      <div class="s">Clears only event logs, not your allowlist/blocklist.</div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

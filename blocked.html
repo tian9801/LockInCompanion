@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>LOCK IN</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(255,255,255,0.06);
+      --line: rgba(255,255,255,0.12);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.65);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(252, 165, 165, 0.20), transparent 55%),
+                  radial-gradient(900px 600px at 90% 20%, rgba(125, 211, 252, 0.16), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    .card {
+      width: min(880px, 92vw);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      font-size: 13px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.4;
+      font-size: 15px;
+    }
+
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      overflow: hidden;
+      margin: 10px 0 14px;
+    }
+
+    .fill {
+      height: 100%;
+      width: 100%;
+      background: rgba(252,165,165,0.75);
+      transition: width 0.35s ease;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button.primary {
+      background: rgba(125,211,252,0.18);
+    }
+
+    button:hover {
+      background: rgba(255,255,255,0.10);
+    }
+
+    .right {
+      display: grid;
+      place-items: center;
+      gap: 12px;
+    }
+
+    img {
+      max-width: 320px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .tiny {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div>
+      <div class="badge" id="badgeText">Focus session active</div>
+
+      <h1 id="titleText">LOCK IN</h1>
+
+      <p id="descText">
+        Your Canvas assignments are waiting.
+      </p>
+
+      <div class="bar">
+        <div class="fill" id="healthFill"></div>
+      </div>
+
+      <p class="tiny" id="healthText">Discipline meter: 100%</p>
+
+      <div class="actions">
+        <button class="primary" id="closeTab">Close Tab</button>
+        <button id="stopSession">Stop Session</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <img id="memeGif" src="" alt="motivational chaos" />
+      <div class="tiny" id="attemptsText"></div>
+    </div>
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>

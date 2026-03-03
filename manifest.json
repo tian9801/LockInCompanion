@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "LockInCompanion",
+  "version": "0.2.0",
+  "description": "Pomodoro + allowlist blocking with a playful blocked screen.",
+  "permissions": ["tabs", "storage", "alarms"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LockInCompanion"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html", "assets/images/*", "assets/fonts/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
